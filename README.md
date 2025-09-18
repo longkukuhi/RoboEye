@@ -1,8 +1,8 @@
 <h1 align="center">
-RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching</h1>
+🤖 RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching</h1>
 
 <p align = "center">
-<img src="./arch.png" width="70%" height="70%" />
+<img src="./arch.png"/>
 </p>
 
 
@@ -31,11 +31,11 @@ pip install -r requirements.txt
 ```
 ❗ You can modify the PyTorch version to suit your machine.
 
-## 📍 Download pre-trained 2D Feature Extractor
+## ⬇️ Download pre-trained 2D Feature Extractor
 
    - [`BEiT3-Base`](https://conversationhub.blob.core.windows.net/beit-share-public/beit3/pretraining/beit3_base_patch16_224.pth?sv=2021-10-04&st=2023-06-08T11%3A16%3A02Z&se=2033-06-09T11%3A16%3A00Z&sr=c&sp=r&sig=N4pfCVmSeq4L4tS8QbrFVsX6f6q844eft8xSuXdxU48%3D): #layer=12; hidden=768; FFN factor=4x; #head=12; patch=16x16; #parameters: 222M
 
-## 📍 Download pre-trained Robot 3D Retrieval Transformer
+## 🗃️ Download pre-trained Robot 3D Retrieval Transformer
 
 Download the model weights [here](https://huggingface.co/facebook/VGGT-1B/blob/main/model.pt) and load, or:
 
@@ -80,7 +80,7 @@ python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task '
 
 Train the 3D keypoint-based retrieval matcher with adapter-based strategy.
 ```bash
-python armbench/rerank.py --model 'vggt' --input_size 224 --task 'rerank' --batch_size 128 \
+python armbench/rerank.py --model 'vggt' --task 'rerank' --batch_size 128 \
  --layer_decay 0.65 --lr 5e-5 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
  --data_path 'path/to/your/dataset' --output_dir '/your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
  --save_ckpt_freq 1 -vggt_path 'path/to/ckpt/model.pt'
@@ -109,7 +109,7 @@ python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task '
 
 Train the 3D-feature-awareness module with MRR-driven 3D-awareness training.
 ```bash
-python armbench/rerank.py --model 'vggt' --input_size 224 --task 'classifier' --batch_size 256 \
+python armbench/rerank.py --model 'vggt' --task 'classifier' --batch_size 256 \
  --layer_decay 0.65 --lr 1e-3 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
  --data_path 'path/to/your/dataset' --output_dir '/your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
  --save_ckpt_freq 1 -vggt_path 'path/to/ckpt/model.pth'
