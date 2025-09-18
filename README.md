@@ -130,7 +130,7 @@ python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task '
 ```
 - `model` specifics the name of model we use in this experiments. 
 - `log_dir` is the folder dir that stores the ouput log.
-- `task`  specifics using armbenchpick1t for only use pre-pick images, armbench3t1 for use both pre-pick and post-pick images.
+- `task`  specifics using armbenchpick1 for only use pre-pick images, armbench3t1 for use both pre-pick and post-pick images.
 - `data_path` is the folder dir that stores the datasets.
 - `finetune` specifics the dir to pretrained weight of BEiT-3 model.
 - `vggt_path` specifics the dir to re-trained weight of VGGT model.
