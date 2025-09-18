@@ -1,5 +1,5 @@
 <h1 align="center">
-🤖 RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching</h1>
+🤖RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching</h1>
 
 <p align = "center">
 <img src="./arch.png"/>
@@ -13,12 +13,12 @@
 
 ## 🗞️ Contents
 - [Setup](#setup)
-- [Download pre-trained 2D feature extractor](#download-pre-trained-2d-feature-extractor)
-- [Download pre-trained robot 3D retrieval transformer](#download-pre-trained-robot-3d-retrieval-transformer)
-- [Download Text Tokenizer](#download-text-tokenizer)
-- [Download our preprocessed json files](#download-our-preprocessed-json-files)
-- [(Optional) Download our checkpoints](#optional-download-our-checkpoints)
-- [Object Identification in ARMBench](#object-identification-in-armbench)
+- [Download pre-trained 2D feature extractor](#-download-pre-trained-2d-feature-extractor)
+- [Download pre-trained robot 3D retrieval transformer](#-download-pre-trained-robot-3d-retrieval-transformer)
+- [Download Text Tokenizer](#-download-text-tokenizer)
+- [Download our preprocessed json files](#-download-our-preprocessed-json-files)
+- [(Optional) Download our checkpoints](#-optional-download-our-checkpoints)
+- [Object Identification in ARMBench](#-object-identification-in-armbench)
 
 ## 🛠️ Setup
 
