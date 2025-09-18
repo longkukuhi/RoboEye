@@ -13,8 +13,8 @@
 
 ## 🗞️ Contents
 - [Setup](#-setup)
-- [Download pretrained 2D feature extractor](#-download-pretrained-2d-feature-extractor)
-- [Download pretrained robot 3D retrieval transformer](#-download-pretrained-robot-3d-retrieval-transformer)
+- [Download pretrained 2D Feature Extractor](#-download-pretrained-2d-feature-extractor)
+- [Download pretrained Robot 3D Retrieval Transformer](#-download-pretrained-robot-3d-retrieval-transformer)
 - [Download Text Tokenizer](#-download-text-tokenizer)
 - [Download our preprocessed json files](#-download-our-preprocessed-json-files)
 - [Download our checkpoints](#-download-our-checkpoints)
