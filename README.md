@@ -1,7 +1,7 @@
 <h1 align="center">
 RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching</h1>
 
-Official PyTorch implementation for paper:  "RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching."
+* **Official PyTorch implementation for paper:  "RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching."** <br>
 
 ## 📰 Updates
 - [2025/09/17] The code of RoboEye is released! 🎉
@@ -12,7 +12,7 @@ Official PyTorch implementation for paper:  "RoboEye: Enhancing 2D Robotic Objec
 - [Download pre-trained robot 3D retrieval transformer](#download-pre-trained-robot-3d-retrieval-transformer)
 - [Download Text Tokenizer](#download-text-tokenizer)
 - [Download our preprocessed json files](#download-our-preprocessed-json-files)
-- [(Optional) Download our checkpoints](#(optional)-download-our-checkpoints)
+- [Optional Download our checkpoints](#optional-download-our-checkpoints)
 - [Object Identification in ARMBench](#object-identification-in-armbench)
 
 ## 🛠️ Setup
