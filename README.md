@@ -12,9 +12,9 @@
 - [2025/09/17] The code of RoboEye is released! 🎉
 
 ## 🗞️ Contents
-- [Setup](#setup)
-- [Download pre-trained 2D feature extractor](#-download-pre-trained-2d-feature-extractor)
-- [Download pre-trained robot 3D retrieval transformer](#-download-pre-trained-robot-3d-retrieval-transformer)
+- [Setup](#-setup)
+- [Download pretrained 2D feature extractor](#-download-pretrained-2d-feature-extractor)
+- [Download pretrained robot 3D retrieval transformer](#-download-pretrained-robot-3d-retrieval-transformer)
 - [Download Text Tokenizer](#-download-text-tokenizer)
 - [Download our preprocessed json files](#-download-our-preprocessed-json-files)
 - [(Optional) Download our checkpoints](#-optional-download-our-checkpoints)
@@ -31,11 +31,11 @@ pip install -r requirements.txt
 ```
 ❗ You can modify the PyTorch version to suit your machine.
 
-## ⬇️ Download pre-trained 2D Feature Extractor
+## ⬇️ Download pretrained 2D Feature Extractor
 
    - [`BEiT3-Base`](https://conversationhub.blob.core.windows.net/beit-share-public/beit3/pretraining/beit3_base_patch16_224.pth?sv=2021-10-04&st=2023-06-08T11%3A16%3A02Z&se=2033-06-09T11%3A16%3A00Z&sr=c&sp=r&sig=N4pfCVmSeq4L4tS8QbrFVsX6f6q844eft8xSuXdxU48%3D): #layer=12; hidden=768; FFN factor=4x; #head=12; patch=16x16; #parameters: 222M
 
-## 🗃️ Download pre-trained Robot 3D Retrieval Transformer
+## 🗃️ Download pretrained Robot 3D Retrieval Transformer
 
 Download the model weights [here](https://huggingface.co/facebook/VGGT-1B/blob/main/model.pt) and load, or:
 
@@ -58,7 +58,7 @@ tokenizer = XLMRobertaTokenizer("/your_beit3_model_path/beit3.spm")
 
 The dataset will be made publicly available upon acceptance of the paper.
 
-## 🗂️ (Optional) Download our checkpoints
+## 🗂️ Download our checkpoints
 
 The checkpoints will be made publicly available upon acceptance of the paper.
 
@@ -74,8 +74,8 @@ python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task '
 - `log_dir` is the folder dir that stores the ouput log.
 - `task`  specifics using armbenchpick1extract for only use pre-pick images, armbench3t1extract for use both pre-pick and post-pick images. 
 - `data_path` is the folder dir that stores the datasets.
-- `finetune` specifics the dir to pre-trained weight of BEiT-3 model.
-- `vggt_path` specifics the dir to pre-trained weight of VGGT model.
+- `finetune` specifics the dir to pretrained weight of BEiT-3 model.
+- `vggt_path` specifics the dir to pretrained weight of VGGT model.
 
 
 Train the 3D keypoint-based retrieval matcher with adapter-based strategy.
@@ -89,7 +89,7 @@ python armbench/rerank.py --model 'vggt' --task 'rerank' --batch_size 128 \
 - `log_dir` is the folder dir that stores the ouput log.
 - `task`  specifics using rerank for training with only use pre-pick images, rerank3t1 for training with both pre-pick and post-pick images.
 - `data_path` is the folder dir that stores the datasets.
-- `vggt_path` specifics the dir to pre-trained weight of VGGT model.
+- `vggt_path` specifics the dir to pretrained weight of VGGT model.
 
 
 Sample positive and negative examples for the MRR-driven 3D-awareness training.
@@ -103,7 +103,7 @@ python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task '
 - `log_dir` is the folder dir that stores the ouput log.
 - `task`  specifics using armbenchpick1sample for only use pre-pick images, armbench3t1sample for use both pre-pick and post-pick images. 
 - `data_path` is the folder dir that stores the datasets.
-- `finetune` specifics the dir to pre-trained weight of BEiT-3 model.
+- `finetune` specifics the dir to pretrained weight of BEiT-3 model.
 - `vggt_path` specifics the dir to re-trained weight of VGGT model.
 
 
@@ -132,7 +132,7 @@ python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task '
 - `log_dir` is the folder dir that stores the ouput log.
 - `task`  specifics using armbenchpick1t for only use pre-pick images, armbench3t1 for use both pre-pick and post-pick images.
 - `data_path` is the folder dir that stores the datasets.
-- `finetune` specifics the dir to pre-trained weight of BEiT-3 model.
+- `finetune` specifics the dir to pretrained weight of BEiT-3 model.
 - `vggt_path` specifics the dir to re-trained weight of VGGT model.
 
 
