@@ -1,7 +1,7 @@
 <h1 align="center">
 RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching</h1>
 
-![](./arch.png)
+<img src="./arch.png" width="70%" height="70%" />
 
 * **Official PyTorch implementation for paper:  "RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching."** <br>
 
