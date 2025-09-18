@@ -34,7 +34,6 @@ model.load_state_dict(torch.hub.load_state_dict_from_url(_URL))
 ```
 from transformers import XLMRobertaTokenizer
 tokenizer = XLMRobertaTokenizer("/your_beit3_model_path/beit3.spm")
-
 ```
 
 ### Download our preprossed json files
@@ -46,7 +45,7 @@ The dataset will be made publicly available upon acceptance of the paper.
 The checkpoints will be made publicly available upon acceptance of the paper.
 
 ## Object Identification in ARMBench
-* First extract positive and negative examples for the adapter-based training.
+First extract positive and negative examples for the adapter-based training.
 ```bash
 python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task 'armbenchpick1extract' --batch_size 128 \
  --layer_decay 0.65 --lr 2e-4 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
@@ -61,7 +60,7 @@ python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task '
 - `vggt_path` specifics the dir to pre-trained weight of VGGT model.
 
 
-* Train the 3D keypoint-based retrieval matcher with adapter-based strategy.
+Train the 3D keypoint-based retrieval matcher with adapter-based strategy.
 ```bash
 python armbench/rerank.py --model 'vggt' --input_size 224 --task 'rerank' --batch_size 128 \
  --layer_decay 0.65 --lr 5e-5 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
@@ -75,7 +74,7 @@ python armbench/rerank.py --model 'vggt' --input_size 224 --task 'rerank' --batc
 - `vggt_path` specifics the dir to pre-trained weight of VGGT model.
 
 
-* Sample positive and negative examples for the MRR-driven 3D-awareness training.
+Sample positive and negative examples for the MRR-driven 3D-awareness training.
 ```bash
 python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task 'armbenchpick1sample' --batch_size 128 \
  --layer_decay 0.65 --lr 2e-4 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
@@ -90,7 +89,7 @@ python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task '
 - `vggt_path` specifics the dir to re-trained weight of VGGT model.
 
 
-* Train the 3D-feature-awareness module with MRR-driven 3D-awareness training.
+Train the 3D-feature-awareness module with MRR-driven 3D-awareness training.
 ```bash
 python armbench/rerank.py --model 'vggt' --input_size 224 --task 'classifier' --batch_size 256 \
  --layer_decay 0.65 --lr 1e-3 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
@@ -104,7 +103,7 @@ python armbench/rerank.py --model 'vggt' --input_size 224 --task 'classifier' --
 - `vggt_path` specifics the dir to re-trained weight of VGGT model.
 
 
-* Final inference of the two-stage paradigm.
+Final inference of the two-stage paradigm.
 ```bash
 python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task 'armbenchpick1' --batch_size 128 \
  --layer_decay 0.65 --lr 2e-4 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
