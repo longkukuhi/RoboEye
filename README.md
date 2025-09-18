@@ -1,6 +1,8 @@
 <h1 align="center">
 RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching</h1>
 
+![](./arch.png)
+
 * **Official PyTorch implementation for paper:  "RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching."** <br>
 
 ## 📰 Updates
@@ -12,7 +14,7 @@ RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric 
 - [Download pre-trained robot 3D retrieval transformer](#download-pre-trained-robot-3d-retrieval-transformer)
 - [Download Text Tokenizer](#download-text-tokenizer)
 - [Download our preprocessed json files](#download-our-preprocessed-json-files)
-- [Optional Download our checkpoints](#optional-download-our-checkpoints)
+- [(Optional) Download our checkpoints](#optional-download-our-checkpoints)
 - [Object Identification in ARMBench](#object-identification-in-armbench)
 
 ## 🛠️ Setup
@@ -24,12 +26,13 @@ conda activate roboeye
 cd RoboEye
 pip install -r requirements.txt
 ```
+❗ You can modify the PyTorch version to suit your machine.
 
-## 📍 Download pre-trained 2D feature extractor
+## 📍 Download pre-trained 2D Feature Extractor
 
    - [`BEiT3-Base`](https://conversationhub.blob.core.windows.net/beit-share-public/beit3/pretraining/beit3_base_patch16_224.pth?sv=2021-10-04&st=2023-06-08T11%3A16%3A02Z&se=2033-06-09T11%3A16%3A00Z&sr=c&sp=r&sig=N4pfCVmSeq4L4tS8QbrFVsX6f6q844eft8xSuXdxU48%3D): #layer=12; hidden=768; FFN factor=4x; #head=12; patch=16x16; #parameters: 222M
 
-## 📍 Download pre-trained robot 3D retrieval transformer
+## 📍 Download pre-trained Robot 3D Retrieval Transformer
 
 Download the model weights [here](https://huggingface.co/facebook/VGGT-1B/blob/main/model.pt) and load, or:
 
@@ -61,7 +64,7 @@ First extract positive and negative examples for the adapter-based training.
 ```bash
 python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task 'armbenchpick1extract' --batch_size 128 \
  --layer_decay 0.65 --lr 2e-4 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
- --data_path 'path/to/your/dataset' --output_dir 'your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
+ --data_path 'path/to/your/dataset' --output_dir '/your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
  --save_ckpt_freq 1 --finetune 'path/to/ckpt/beit3_base_patch16_224.pth' -vggt_path 'path/to/ckpt/model.pt' --eval
 ```
 - `model` specifics the name of model we use in this experiments. 
@@ -76,7 +79,7 @@ Train the 3D keypoint-based retrieval matcher with adapter-based strategy.
 ```bash
 python armbench/rerank.py --model 'vggt' --input_size 224 --task 'rerank' --batch_size 128 \
  --layer_decay 0.65 --lr 5e-5 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
- --data_path 'path/to/your/dataset' --output_dir 'your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
+ --data_path 'path/to/your/dataset' --output_dir '/your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
  --save_ckpt_freq 1 -vggt_path 'path/to/ckpt/model.pt'
 ```
 - `model` specifics the name of model we use in this experiments. 
@@ -90,7 +93,7 @@ Sample positive and negative examples for the MRR-driven 3D-awareness training.
 ```bash
 python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task 'armbenchpick1sample' --batch_size 128 \
  --layer_decay 0.65 --lr 2e-4 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
- --data_path 'path/to/your/dataset' --output_dir 'your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
+ --data_path 'path/to/your/dataset' --output_dir '/your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
  --save_ckpt_freq 1 --finetune 'path/to/ckpt/beit3_base_patch16_224.pth' -vggt_path 'path/to/ckpt/model.pth' --eval
 ```
 - `model` specifics the name of model we use in this experiments. 
@@ -105,7 +108,7 @@ Train the 3D-feature-awareness module with MRR-driven 3D-awareness training.
 ```bash
 python armbench/rerank.py --model 'vggt' --input_size 224 --task 'classifier' --batch_size 256 \
  --layer_decay 0.65 --lr 1e-3 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
- --data_path 'path/to/your/dataset' --output_dir 'your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
+ --data_path 'path/to/your/dataset' --output_dir '/your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
  --save_ckpt_freq 1 -vggt_path 'path/to/ckpt/model.pth'
 ```
 - `model` specifics the name of model we use in this experiments. 
@@ -119,7 +122,7 @@ Final inference of the two-stage paradigm.
 ```bash
 python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task 'armbenchpick1' --batch_size 128 \
  --layer_decay 0.65 --lr 2e-4 --epochs 30 --warmup_epochs 3 --drop_path 0.2 --sentencepiece_model 'beit3.spm' \
- --data_path 'path/to/your/dataset' --output_dir 'your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
+ --data_path 'path/to/your/dataset' --output_dir '/your_output_path/' --log_dir '/your_log_path/' --weight_decay 0.05  \
  --save_ckpt_freq 1 --finetune 'path/to/ckpt/beit3_base_patch16_224.pth' -vggt_path 'path/to/ckpt/model.pth' --eval
 ```
 - `model` specifics the name of model we use in this experiments. 
