@@ -17,7 +17,7 @@
 - [Download pretrained robot 3D retrieval transformer](#-download-pretrained-robot-3d-retrieval-transformer)
 - [Download Text Tokenizer](#-download-text-tokenizer)
 - [Download our preprocessed json files](#-download-our-preprocessed-json-files)
-- [(Optional) Download our checkpoints](#-optional-download-our-checkpoints)
+- [Download our checkpoints](#-download-our-checkpoints)
 - [Object Identification in ARMBench](#-object-identification-in-armbench)
 
 ## 🛠️ Setup
