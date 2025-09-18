@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ### Download pre-trained robot 3D retrieval transformer
 
-[VGGT]The model weights will be automatically downloaded from Hugging Face. If you encounter issues such as slow loading, you can manually download them [here](https://huggingface.co/facebook/VGGT-1B/blob/main/model.pt) and load, or:
+Download the model weights [here](https://huggingface.co/facebook/VGGT-1B/blob/main/model.pt) and load, or:
 
 ```python
 model = VGGT()
@@ -121,7 +121,7 @@ python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task '
 
 ## Acknowledgement
 
-This repository is built using the [VGGT](https://github.com/facebookresearch/vggt) repository, the [BEiT](https://github.com/microsoft/unilm/tree/master/beit), the [BEiTv2](https://github.com/microsoft/unilm/tree/master/beit2), the [BEiTv3](https://github.com/microsoft/unilm/tree/master/beit3), the [CLIP](https://github.com/openai/CLIP), the [open_clip](https://github.com/mlfoundations/open_clip), the [Oscar](https://github.com/microsoft/Oscar), the [DeiT](https://github.com/facebookresearch/deit), the [timm](https://github.com/rwightman/pytorch-image-models) library and many other inspiring works in the community.
+This repository is built using the [VGGT](https://github.com/facebookresearch/vggt), the [BEiT](https://github.com/microsoft/unilm/tree/master/beit), the [BEiTv2](https://github.com/microsoft/unilm/tree/master/beit2), the [BEiTv3](https://github.com/microsoft/unilm/tree/master/beit3), the [CLIP](https://github.com/openai/CLIP), the [open_clip](https://github.com/mlfoundations/open_clip), the [Oscar](https://github.com/microsoft/Oscar), the [DeiT](https://github.com/facebookresearch/deit) repository, the [timm](https://github.com/rwightman/pytorch-image-models) library and many other inspiring works in the community.
 
 
 ## License
