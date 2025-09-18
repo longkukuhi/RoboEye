@@ -1,23 +1,35 @@
-# RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching
+<h1 align="center">
+RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching</h1>
 
-Official PyTorch implementation for paper:   "RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching."
+Official PyTorch implementation for paper:  "RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching."
 
-## Updates
-- [2025/09/17] The code of RoboEye is released!
+## 📰 Updates
+- [2025/09/17] The code of RoboEye is released! 🎉
 
-## Setup
+## 🗞️ Contents
+- [Setup](#setup)
+- [Download pre-trained 2D feature extractor](#download-pre-trained-2D-feature-extractor)
+- [Download pre-trained robot 3D retrieval transformer](#download-pre-trained-robot-3D-retrieval-transformer)
+- [Download Text Tokenizer](#download-text-tokenizer)
+- [Download our preprocessed json files](#download-our-preprocessed-json-files)
+- [(Optional) Download our checkpoints](#(optional)-download-our-checkpoints)
+- [Object Identification in ARMBench](#object-identification-in-armbench)
+
+## 🛠️ Setup {#setup}
 
 First, clone this repository to your local machine, and install the dependencies.
 ```bash
+conda create -n roboeye python=3.11 -y
+conda activate roboeye
 cd RoboEye
 pip install -r requirements.txt
 ```
 
-### Download pre-trained 2D feature extractor
+## 📍 Download pre-trained 2D feature extractor {#download-pre-trained-2D-feature-extractor}
 
    - [`BEiT3-Base`](https://conversationhub.blob.core.windows.net/beit-share-public/beit3/pretraining/beit3_base_patch16_224.pth?sv=2021-10-04&st=2023-06-08T11%3A16%3A02Z&se=2033-06-09T11%3A16%3A00Z&sr=c&sp=r&sig=N4pfCVmSeq4L4tS8QbrFVsX6f6q844eft8xSuXdxU48%3D): #layer=12; hidden=768; FFN factor=4x; #head=12; patch=16x16; #parameters: 222M
 
-### Download pre-trained robot 3D retrieval transformer
+## 📍 Download pre-trained robot 3D retrieval transformer {#download-pre-trained-robot-3D-retrieval-transformer}
 
 Download the model weights [here](https://huggingface.co/facebook/VGGT-1B/blob/main/model.pt) and load, or:
 
@@ -28,7 +40,7 @@ model.load_state_dict(torch.hub.load_state_dict_from_url(_URL))
 ```
 
 
-### Download Text Tokenizer
+## 📍 Download Text Tokenizer {#download-text-tokenizer}
 
 [beit3.spm](https://conversationhub.blob.core.windows.net/beit-share-public/beit3/sentencepiece/beit3.spm) is the sentencepiece model used for tokenizing texts.
 ```
@@ -36,15 +48,15 @@ from transformers import XLMRobertaTokenizer
 tokenizer = XLMRobertaTokenizer("/your_beit3_model_path/beit3.spm")
 ```
 
-### Download our preprossed json files
+## 📦 Download our preprocessed json files {#download-our-preprocessed-json-files}
 
 The dataset will be made publicly available upon acceptance of the paper.
 
-### (Optional) Download our checkpoints
+## 🗂️ (Optional) Download our checkpoints {#(optional)-download-our-checkpoints}
 
 The checkpoints will be made publicly available upon acceptance of the paper.
 
-## Object Identification in ARMBench
+## 🎮 Object Identification in ARMBench {#object-identification-in-armbench}
 First extract positive and negative examples for the adapter-based training.
 ```bash
 python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task 'armbenchpick1extract' --batch_size 128 \
@@ -119,13 +131,12 @@ python armbench/ID.py --model 'beit3_base_patch16_224' --input_size 224 --task '
 
 
 
-## Acknowledgement
+## 🙏 Acknowledgement
 
 This repository is built using the [VGGT](https://github.com/facebookresearch/vggt), the [BEiT](https://github.com/microsoft/unilm/tree/master/beit), the [BEiTv2](https://github.com/microsoft/unilm/tree/master/beit2), the [BEiTv3](https://github.com/microsoft/unilm/tree/master/beit3), the [CLIP](https://github.com/openai/CLIP), the [open_clip](https://github.com/mlfoundations/open_clip), the [Oscar](https://github.com/microsoft/Oscar), the [DeiT](https://github.com/facebookresearch/deit) repository, the [timm](https://github.com/rwightman/pytorch-image-models) library and many other inspiring works in the community.
 
 
-## License
+## 📄 License
 This project is licensed under the license found in the LICENSE file in the root directory of this source tree.
-
 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct)
 
