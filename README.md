@@ -49,7 +49,7 @@ model.load_state_dict(torch.hub.load_state_dict_from_url(_URL))
 ## 📍 Download Text Tokenizer
 
 [beit3.spm](https://conversationhub.blob.core.windows.net/beit-share-public/beit3/sentencepiece/beit3.spm) is the sentencepiece model used for tokenizing texts.
-```
+```python
 from transformers import XLMRobertaTokenizer
 tokenizer = XLMRobertaTokenizer("/your_beit3_model_path/beit3.spm")
 ```
