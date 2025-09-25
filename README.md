@@ -2,7 +2,7 @@
 🤖RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching</h1>
 
 <p align = "center">
-<img src="asset/arch.png">
+<img src="assets/arch.png">
 </p>
 
 
