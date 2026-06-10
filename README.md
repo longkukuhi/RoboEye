@@ -1,5 +1,5 @@
 <h1 align="center">
-🤖RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching</h1>
+🤖[ICRA2026] RoboEye: Enhancing 2D Robotic Object Identification with Selective 3D Geometric Keypoint Matching</h1>
 
 <p align = "center">
 <img src="assets/arch.png">
@@ -10,6 +10,7 @@
 
 ## 📰 Updates
 - [2025/09/17] The code of RoboEye is released! 🎉
+- [2025/01/31] RoboEye is accepted by ICRA2026! 🎉
 
 ## 🗞️ Contents
 - [Setup](#-setup)
